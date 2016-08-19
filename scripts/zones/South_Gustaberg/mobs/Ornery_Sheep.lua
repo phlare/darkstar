@@ -15,7 +15,8 @@ function onMobDespawn(mob)
     if (Carnero_PH[mobID] ~= nil) then
         local ToD = GetServerVariable("[POP]Carnero");
         if (ToD <= os.time(t) and GetMobAction(Carnero) == 0) then
-            if (math.random(1,20) == 5) then
+            -- set carner pop rate to 20% instead of 5% if window open
+            if (math.random(1,5) == 2) then
                 UpdateNMSpawnPoint(Carnero);
                 GetMobByID(Carnero):setRespawnTime(GetMobRespawnTime(mobID));
                 SetServerVariable("[PH]Carnero", mobID);
