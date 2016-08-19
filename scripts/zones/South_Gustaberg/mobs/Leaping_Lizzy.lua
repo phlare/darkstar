@@ -10,7 +10,7 @@
 function onMobDespawn(mob)
 
     -- Set LL's ToD
-    SetServerVariable("[POP]Leaping_Lizzy", os.time(t) + 3600); -- 1 hour
+    SetServerVariable("[POP]Leaping_Lizzy", os.time(t) + 1800); -- 30 minutes
     DeterMob(mob:getID(), true);
 
     -- Set PH back to normal, then set to respawn spawn

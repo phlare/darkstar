@@ -33,8 +33,8 @@ function onMobDespawn(mob)
         if (LL_ToD <= os.time(t) and GetMobAction(Leaping_Lizzy) == 0) then
 
             -- printf("LL window open");
-            -- Give Rock_Lizard 5 percent chance to pop LL
-            if (math.random(1,20) == 5) then
+            -- Give Rock_Lizard 20 percent chance to pop LL
+            if (math.random(1,5) == 2) then
                 -- printf("LL will pop");
                 UpdateNMSpawnPoint(Leaping_Lizzy);
                 GetMobByID(Leaping_Lizzy):setRespawnTime(GetMobRespawnTime(mobID));
