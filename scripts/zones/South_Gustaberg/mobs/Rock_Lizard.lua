@@ -25,7 +25,7 @@ function onMobDespawn(mob)
 
     -- Check if Rock Lizard is within the Leaping_Lizzy_PH table
     if (Leaping_Lizzy_PH[mobID] ~= nil) then
-        -- printf("%u is a PH",mob);
+        -- printf("%u is a PH",mobID);
         -- Get LL's previous ToD
         local LL_ToD = GetServerVariable("[POP]Leaping_Lizzy");
 
