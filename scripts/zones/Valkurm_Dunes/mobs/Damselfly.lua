@@ -24,10 +24,17 @@ end;
 function onMobDespawn(mob)
     local mobID = mob:getID();
 
+    -- Check if Damselfly is within the Valkurm_Emperor_PH table
     if (Valkurm_Emperor_PH[mobID] ~= nil) then
+        -- printf("%u is a PH",mobID);
+        -- Get VE's previous ToD
         local VE_ToD = GetServerVariable("[POP]Valkurm_Emperor");
+        -- Check if VE window is open, and there is not an VE popped already(ACTION_NONE = 0)
         if (VE_ToD <= os.time(t) and GetMobAction(Valkurm_Emperor) == 0) then
-            if (math.random(1,20) == 5) then
+            -- printf("VE window open");
+            -- Give Damselfly 20 percent chance to pop VE
+            if (math.random(1,5) == 2) then
+                -- printf("VE will pop");
                 UpdateNMSpawnPoint(Valkurm_Emperor);
                 GetMobByID(Valkurm_Emperor):setRespawnTime(GetMobRespawnTime(mobID));
                 SetServerVariable("[PH]Valkurm_Emperor", mobID);
@@ -36,3 +43,4 @@ function onMobDespawn(mob)
         end
     end
 end;
+

@@ -10,7 +10,7 @@
 function onMobDespawn(mob)
 
     -- Set VE's Window Open Time
-    SetServerVariable("[POP]Valkurm_Emperor", os.time(t) + 3600); -- 1 hour
+    SetServerVariable("[POP]Valkurm_Emperor", os.time(t) + 900); -- 15 minutes
     DeterMob(mob:getID(), true);
 
     -- Set PH back to normal, then set to respawn spawn
