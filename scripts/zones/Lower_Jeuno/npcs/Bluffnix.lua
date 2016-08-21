@@ -37,6 +37,17 @@ function onTrade(player,npc,trade)
         else
             player:startEvent(0x002b,81); -- You're bag's bigger than any gobbie bag I've ever seen...;
         end
+    elseif (count == 1 and gil == 100 and player:getQuestStatus(JEUNO,TheGobbieBag[1]) == 1) then
+        -- if you trade him 100 gil, then he'll just give you the next set of items, because fuck these quests
+        for i = 3, 6, 1 do
+            player:addItem(TheGobbieBag[i]);
+            player:messageSpecial(ITEM_OBTAINED,TheGobbieBag[i]);
+        end
+        -- TODO:  set some text here.
+        -- player:showText(npc,BLUFFNIX_TRADE_DIALOG);
+            
+        player:addFame(JEUNO, 30);
+        player:tradeComplete(trade);
     end
 end;
 
