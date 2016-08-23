@@ -18,7 +18,7 @@ require("scripts/zones/Bastok_Markets/TextIDs");
 
 function onTrade(player,npc,trade)
 
-    if (player:getQuestStatus(BASTOK,MOM_THE_ADVENTURER) ~= QUEST_AVAILABLE and player:getVar("MomTheAdventurer_Event") == 1) then
+    if (player:getQuestStatus(BASTOK,MOM_THE_ADVENTURER) ~= QUEST_AVAILABLE and player:getVar("MomTheAdventurer_Event") <= 1) then
         if (trade:hasItemQty(13454,1) and trade:getItemCount() == 1) then -- Trade Copper Ring
             player:startEvent(0x005f);
         end
