@@ -983,7 +983,7 @@ int32 map_config_default()
     map_config.audit_linkshell = 0;
     map_config.msg_server_port = 54003;
     map_config.msg_server_ip = "127.0.0.1";
-    map_config.healing_tick_delay = 10;
+    map_config.healing_tick_delay = 4; // not reading from config properly
     return 0;
 }
 
