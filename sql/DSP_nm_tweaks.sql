@@ -61,3 +61,10 @@ SET rate = 450 WHERE dropId = 3678 AND itemId = 15224;
 -- update rabbit charm drop to be much more likely
 UPDATE mob_droplist
 SET rate = 350 WHERE dropId = 1826 AND itemId = 13112;
+
+
+-- Spiny Spipi
+
+-- update mist silk cape drop rate to be 50/50
+UPDATE mob_droplist
+SET rate = 500 WHERE dropId = 3310 AND itemId = 13607;
