@@ -27,7 +27,7 @@ function onMobDespawn(mob)
     if (Spiny_Spipi_PH[mobID] ~= nil) then
         local ToD = GetServerVariable("[POP]Spiny_Spipi");
         if (ToD <= os.time(t) and GetMobAction(Spiny_Spipi) == 0) then
-            if (math.random(1,15) == 5) then
+            if (math.random(1,5) == 3) then
                 UpdateNMSpawnPoint(Spiny_Spipi);
                 GetMobByID(Spiny_Spipi):setRespawnTime(GetMobRespawnTime(mobID));
                 SetServerVariable("[PH]Spiny_Spipi", mobID);
