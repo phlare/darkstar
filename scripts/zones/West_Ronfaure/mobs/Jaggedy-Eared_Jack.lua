@@ -10,8 +10,8 @@
 function onMobDespawn(mob)    
 
     -- Set Jaggedy-Eared_Jack's Window Open Time, and disable respawn
-    local wait = math.random((3000),(21600));
-    SetServerVariable("[POP]Jaggedy_Eared_Jack", os.time(t) + wait); -- 50 minutes - 6 hours
+    local wait = math.random((600),(1800));
+    SetServerVariable("[POP]Jaggedy_Eared_Jack", os.time(t) + wait); -- 10 minutes - 30 minutes
     DeterMob(mob:getID(), true);
     
     -- Set PH back to normal, then set to respawn spawn

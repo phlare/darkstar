@@ -1,19 +1,19 @@
 -- to get dropId:
---  mysql> select * from mob_spawn_points WHERE mobname = 'Valkurm_Emperor';
--- +----------+-----------------+-----------------+---------+----------+--------+---------+---------+
--- | mobid    | mobname         | polutils_name   | groupid | pos_x    | pos_y  | pos_z   | pos_rot |
--- +----------+-----------------+-----------------+---------+----------+--------+---------+---------+
--- | 17199438 | Valkurm_Emperor | Valkurm Emperor |    5742 | -211.000 | -0.010 | -34.000 |      39 |
--- +----------+-----------------+-----------------+---------+----------+--------+---------+---------+
+--  mysql> select * from mob_spawn_points WHERE mobname = 'Jaggedy-Eared_Jack';
+--+----------+--------------------+--------------------+---------+----------+---------+----------+---------+
+--| mobid    | mobname            | polutils_name      | groupid | pos_x    | pos_y   | pos_z    | pos_rot |
+--+----------+--------------------+--------------------+---------+----------+---------+----------+---------+
+--| 17187111 | Jaggedy-Eared_Jack | Jaggedy-Eared Jack |    5561 | -281.000 | -19.000 | -220.000 |     127 |
+--+----------+--------------------+--------------------+---------+----------+---------+----------+---------+
 
--- mysql> select * from mob_groups WHERE groupId = 5742;
--- +---------+--------+--------+-------------+-----------+--------+----+----+----------+----------+------------+
--- | groupid | poolid | zoneid | respawntime | spawntype | dropid | HP | MP | minLevel | maxLevel | allegiance |
--- +---------+--------+--------+-------------+-----------+--------+----+----+----------+----------+------------+
--- |    5742 |   4124 |    103 |        7200 |       128 |   3678 |  0 |  0 |       29 |       30 |          0 |
--- +---------+--------+--------+-------------+-----------+--------+----+----+----------+----------+------------+
+-- mysql> select * from mob_groups WHERE groupId = 5561;
+--+---------+--------+--------+-------------+-----------+--------+----+----+----------+----------+------------+
+--| groupid | poolid | zoneid | respawntime | spawntype | dropid | HP | MP | minLevel | maxLevel | allegiance |
+--+---------+--------+--------+-------------+-----------+--------+----+----+----------+----------+------------+
+--|    5561 |   2125 |    100 |        3300 |       128 |   1826 |  0 |  0 |        9 |       10 |          0 |
+--+---------+--------+--------+-------------+-----------+--------+----+----+----------+----------+------------+
 
--- mysql> select * from mob_droplist WHERE dropId = 3678;
+-- mysql> select * from mob_droplist WHERE dropId = 1826;
 -- +--------+------+--------+------+
 -- | dropId | type | itemId | rate |
 -- +--------+------+--------+------+
@@ -54,6 +54,10 @@ WHERE NOT EXISTS (
 );
 -- also update empress hairpin to be much more likely to drop
 UPDATE mob_droplist
-SET rate = 640
-WHERE dropId = 3678 AND itemId = 15224;
+SET rate = 450 WHERE dropId = 3678 AND itemId = 15224;
 
+-- Jaggedy-Eared_Jack
+
+-- update rabbit charm drop to be much more likely
+UPDATE mob_droplist
+SET rate = 350 WHERE dropId = 1826 AND itemId = 13112;
