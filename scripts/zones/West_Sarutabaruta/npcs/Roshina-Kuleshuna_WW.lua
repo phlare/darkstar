@@ -29,7 +29,7 @@ end;
 
 function onTrigger(player,npc)
 
-    if (player:hasKeyItem(getSupplyKey(region)) and player:getNation() == guardnation) then
+    if (player:hasKeyItem(getSupplyKey(region))) then
         if (supplyRunFresh(player) == 1) then
             player:startEvent(csid,16,0,0,0,1,0,0,255); -- you have brought us supplies !
         else
