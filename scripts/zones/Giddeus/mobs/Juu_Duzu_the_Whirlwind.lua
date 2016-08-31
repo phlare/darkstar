@@ -10,7 +10,7 @@
 function onMobDespawn(mob)
 
     -- Set Juu_Duzu_the_Whirlwind's Window Open Time
-    SetServerVariable("[POP]Juu_Duzu_the_Whirlwind", os.time(t) + math.random((3600),(7200))); -- 1-2 hours
+    SetServerVariable("[POP]Juu_Duzu_the_Whirlwind", os.time(t) + math.random((180),(900))); -- 3-15 min
     DeterMob(mob:getID(), true);
 
     -- Set PH back to normal, then set to respawn spawn

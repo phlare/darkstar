@@ -16,7 +16,7 @@ function onMobDespawn(mob)
 
         local ToD = GetServerVariable("[POP]Juu_Duzu_the_Whirlwind");
         if (ToD <= os.time(t) and GetMobAction(Juu_Duzu_the_Whirlwind) == 0) then
-            if (math.random(1,20) == 5) then
+            if (math.random(1,5) == 3) then
                 UpdateNMSpawnPoint(Juu_Duzu_the_Whirlwind);
                 GetMobByID(Juu_Duzu_the_Whirlwind):setRespawnTime(GetMobRespawnTime(mobID));
                 SetServerVariable("[PH]Juu_Duzu_the_Whirlwind", mobID);

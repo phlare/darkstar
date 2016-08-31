@@ -16,7 +16,7 @@ function onMobDespawn(mob)
 
         local ToD = GetServerVariable("[POP]Vuu_Puqu_the_Beguiler");
         if (ToD <= os.time(t) and GetMobAction(Vuu_Puqu_the_Beguiler) == 0) then
-            if (math.random(1,20) == 5) then
+            if (math.random(1,5) == 3) then
                 UpdateNMSpawnPoint(Vuu_Puqu_the_Beguiler);
                 GetMobByID(Vuu_Puqu_the_Beguiler):setRespawnTime(GetMobRespawnTime(mobID));
                 SetServerVariable("[PH]Vuu_Puqu_the_Beguiler", mobID);
