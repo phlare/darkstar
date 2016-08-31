@@ -10,7 +10,7 @@
 function onMobDespawn(mob)
 
     -- Set Lilac Tower NMs Window Open Time
-    local wait = math.random(2700,3600); -- between 45 and 60 minute spawn timer
+    local wait = math.random(180,300); -- between 3 and 5 minute spawn timer
     SetServerVariable("[POP]MultiNM_Zone_194", os.time(t) + wait);
     DeterMob(mob:getID(), true);
 
