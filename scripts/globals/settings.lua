@@ -48,8 +48,8 @@ UNLOCK_OUTPOST_WARPS = 0; -- Set to 1 to give starting characters all outpost wa
 SHOP_PRICE      = 1.000; -- Multiplies prices in NPC shops.
 GIL_RATE        = 2.000; -- Multiplies gil earned from quests.  Won't always display in game.
 BAYLD_RATE      = 1.000; -- Multiples bayld earned from quests.
-EXP_RATE        = 1.000; -- Multiplies exp earned from fov and quests.
-TABS_RATE       = 1.000; -- Multiplies tabs earned from fov.
+EXP_RATE        = 2.000; -- Multiplies exp earned from fov and quests.
+TABS_RATE       = 2.000; -- Multiplies tabs earned from fov.
 CURE_POWER      = 1.000; -- Multiplies amount healed from Healing Magic, including the relevant Blue Magic.
 ELEMENTAL_POWER = 1.000; -- Multiplies damage dealt by Elemental and non-drain Dark Magic.
 DIVINE_POWER    = 1.000; -- Multiplies damage dealt by Divine Magic.
@@ -61,10 +61,10 @@ WEAPON_SKILL_POWER  = 1.000; -- Multiplies damage dealt by Weapon Skills.
 WEAPON_SKILL_POINTS = 1.000; -- Multiplies points earned during weapon unlocking.
 USE_ADOULIN_WEAPON_SKILL_CHANGES = false; -- true/false. Change to toggle new Adoulin weapon skill damage calculations
 
-HARVESTING_BREAK_CHANCE = 0.05; -- % chance for the sickle to break during harvesting.  Set between 0 and 1.
-EXCAVATION_BREAK_CHANCE = 0.05; -- % chance for the pickaxe to break during excavation.  Set between 0 and 1.
-LOGGING_BREAK_CHANCE    = 0.05; -- % chance for the hatchet to break during logging.  Set between 0 and 1.
-MINING_BREAK_CHANCE     = 5; -- % chance for the pickaxe to break during mining.  Set between 0 and 100. 
+HARVESTING_BREAK_CHANCE = 0; -- % chance for the sickle to break during harvesting.  Set between 0 and 1.
+EXCAVATION_BREAK_CHANCE = 0; -- % chance for the pickaxe to break during excavation.  Set between 0 and 1.
+LOGGING_BREAK_CHANCE    = 0; -- % chance for the hatchet to break during logging.  Set between 0 and 1.
+MINING_BREAK_CHANCE     = 0; -- % chance for the pickaxe to break during mining.  Set between 0 and 100. 
 HARVESTING_RATE         = 0.75; -- % chance to recieve an item from haresting.  Set between 0 and 1.
 EXCAVATION_RATE         = 0.75; -- % chance to recieve an item from excavation.  Set between 0 and 1.
 LOGGING_RATE            = 0.75; -- % chance to recieve an item from logging.  Set between 0 and 1.
@@ -74,10 +74,10 @@ HEALING_TP_CHANGE       = -20; -- Change in TP for each healing tick. Default is
 
 -- SE implemented coffer/chest illusion time in order to prevent coffer farming. No-one in the same area can open a chest or coffer for loot (gil, gems & items)
 -- till a random time between MIN_ILLSION_TIME and MAX_ILLUSION_TIME. During this time players can loot keyitem and item related to quests (AF, maps... etc.)
-COFFER_MAX_ILLUSION_TIME = 3600;  -- 1 hour
-COFFER_MIN_ILLUSION_TIME = 1800;  -- 30 minutes
-CHEST_MAX_ILLUSION_TIME  = 3600;  -- 1 hour
-CHEST_MIN_ILLUSION_TIME  = 1800;  -- 30 minutes
+COFFER_MAX_ILLUSION_TIME = 600;  -- 10 min
+COFFER_MIN_ILLUSION_TIME = 300;  -- 5 minutes
+CHEST_MAX_ILLUSION_TIME  = 600;  -- 10 minutes
+CHEST_MIN_ILLUSION_TIME  = 300;  -- 5 minutes
 
 -- Sets spawn type for: Behemoth, Fafnir, Adamantoise, King Behemoth, Nidhog, Aspidochelone.
 -- Use 0 for timed spawns, 1 for force pop only, 2 for both
@@ -112,7 +112,7 @@ FrigiciteDuration = 30; -- When OldSChoolG2 is enabled, this is the time (in sec
 -- FIELDS OF VALOR/Grounds of Valor SETTINGS
 REGIME_WAIT = 1; --Make people wait till 00:00 game time as in retail. If it's 0, there is no wait time.
 FIELD_MANUALS = 1; -- Enables Fields of Valor manuals
-LOW_LEVEL_REGIME = 0; --Allow people to kill regime targets even if they give no exp, allowing people to farm regime targets at 75 in low level areas.
+LOW_LEVEL_REGIME = 1; --Allow people to kill regime targets even if they give no exp, allowing people to farm regime targets at 75 in low level areas.
 GROUNDS_TOMES = 1; -- Enables Grounds of Valor tomes
 
 -- JOB ABILITY/TRAIT SPECIFIC SETTINGS
@@ -132,7 +132,7 @@ ELEMENTAL_DEBUFF_DURATION = 120; -- base duration of elemental debuffs
 AQUAVEIL_COUNTER = 1;  -- Base amount of hits Aquaveil absorbs to prevent spell interrupts. Retail is 1.
 ABSORB_SPELL_AMOUNT = 8; -- how much of a stat gets absorbed by DRK absorb spells - expected to be a multiple of 8.
 ABSORB_SPELL_TICK = 9; -- duration of 1 absorb spell tick
-SNEAK_INVIS_DURATION_MULTIPLIER = 1; -- multiplies duration of sneak,invis,deodorize to reduce player torture. 1 = retail behavior.
+SNEAK_INVIS_DURATION_MULTIPLIER = 5; -- multiplies duration of sneak,invis,deodorize to reduce player torture. 1 = retail behavior.
 USE_OLD_CURE_FORMULA = false; -- true/false. if true, uses older cure formula (3*MND + VIT + 3*(healing skill/5)) // cure 6 will use the newer formula
 
 -- CELEBRATIONS
@@ -150,10 +150,10 @@ HALLOWEEN_2005 = 0; -- Set to 1 to Enable the 2005 version of Harvest Festival, 
 HALLOWEEN_YEAR_ROUND = 0; -- Set to 1 to have Harvest Festival initialize outside of normal times.
 
 -- MISC
-HOMEPOINT_HEAL = 0; --Set to 1 if you want Home Points to heal you like in single-player Final Fantasy games.
+HOMEPOINT_HEAL = 1; --Set to 1 if you want Home Points to heal you like in single-player Final Fantasy games.
 RIVERNE_PORTERS = 120; -- Time in seconds that Unstable Displacements in Cape Riverne stay open after trading a scale.
 LANTERNS_STAY_LIT = 1200; -- time in seconds that lanterns in the Den of Rancor stay lit.
-ENABLE_COP_ZONE_CAP=1; -- enable or disable lvl cap
+ENABLE_COP_ZONE_CAP=0; -- enable or disable lvl cap
 TIMEZONE_OFFSET = 9.0; -- Offset from UTC used to determine when "JP Midnight" is for the server.  Default is JST (+9.0).
 ALLOW_MULTIPLE_EXP_RINGS = 0; -- Set to 1 to remove ownership restrictions on the Chariot/Empress/Emperor Band trio.
 BYPASS_EXP_RING_ONE_PER_WEEK = 0; -- -- Set to 1 to bypass the limit of one ring per Conquest Tally Week.
