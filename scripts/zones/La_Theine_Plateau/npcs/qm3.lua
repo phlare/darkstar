@@ -20,6 +20,8 @@ function onTrade(player,npc,trade)
     if (player:getQuestStatus(WINDURST, I_CAN_HEAR_A_RAINBOW) == QUEST_ACCEPTED) then
         if (trade:hasItemQty(1125,1) and trade:getItemCount() == 1 and trade:getGil() == 0 and player:getVar("I_CAN_HEAR_A_RAINBOW") == 127) then
             player:startEvent(0x007c);
+        else
+            getRainbowStatus(player);
         end
     end
 end;
@@ -65,5 +67,36 @@ function onEventFinish(player,csid,option)
     end
 end;
 
+-------------------------------------
+-- getRainbowStatus - for debugging
+-------------------------------------
 
+function getRainbowStatus(player)
+    
+    if (player:hasItem( 1125, 0)) then
+        local weatherNeeded = 'Weather still needed:';
+        if (player:getMaskBit(player:getVar("I_CAN_HEAR_A_RAINBOW"),0)  == false) then
+            weatherNeeded = weatherNeeded .. " Fire";
+        end
+        if (player:getMaskBit(player:getVar("I_CAN_HEAR_A_RAINBOW"),1)  == false) then
+            weatherNeeded = weatherNeeded .. " Clear";
+        end
+        if (player:getMaskBit(player:getVar("I_CAN_HEAR_A_RAINBOW"),2)  == false) then
+           weatherNeeded = weatherNeeded .. " Earth";
+        end
+        if (player:getMaskBit(player:getVar("I_CAN_HEAR_A_RAINBOW"),3)  == false) then
+            weatherNeeded = weatherNeeded .. " Wind";
+        end
+        if (player:getMaskBit(player:getVar("I_CAN_HEAR_A_RAINBOW"),4)  == false) then
+            weatherNeeded = weatherNeeded .. " Water";
+        end
+        if (player:getMaskBit(player:getVar("I_CAN_HEAR_A_RAINBOW"),5)  == false) then
+            weatherNeeded = weatherNeeded .. " Ice";
+        end
+        if (player:getMaskBit(player:getVar("I_CAN_HEAR_A_RAINBOW"),6)  == false) then
+            weatherNeeded = weatherNeeded .. " Thunder";
+        end
+        player:PrintToPlayer(weatherNeeded);
+    end
+end;
 
