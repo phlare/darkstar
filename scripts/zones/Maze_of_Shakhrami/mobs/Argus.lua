@@ -13,10 +13,10 @@ function onMobDespawn(mob)
     local whichNM = math.random(0,19);
 
     if (whichNM < 10) then
-        SetRespawnTime(Argus, 64800, 108000); -- 18-30 hours
+        SetRespawnTime(Argus, 300, 600); -- 5-10 min
         DeterMob(Leech_King, true);
     else
-        SetRespawnTime(Leech_King, 64800, 108000); -- 18-30 hours
+        SetRespawnTime(Leech_King, 300, 600); -- 5-10 min
         DeterMob(Argus, true);
     end
 

@@ -68,3 +68,20 @@ SET rate = 350 WHERE dropId = 1826 AND itemId = 13112;
 -- update mist silk cape drop rate to be 50/50
 UPDATE mob_droplist
 SET rate = 500 WHERE dropId = 3310 AND itemId = 13607;
+
+
+-- aArgus
+
+-- add real peacock charm back to Argus and make ok droprate
+INSERT INTO mob_droplist (dropId, type, itemId, rate)
+SELECT 174 dropId, 0 type, 13056 itemId, 320 rate
+FROM DUAL
+WHERE NOT EXISTS (
+	SELECT 1
+	FROM mob_droplist
+	WHERE dropId = 174 AND itemId = 13056
+	LIMIT 1
+);
+-- also update empress hairpin to be much more likely to drop
+UPDATE mob_droplist
+SET rate = 320 WHERE dropId = 174 AND itemId = 15515;
