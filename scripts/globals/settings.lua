@@ -30,11 +30,11 @@ ENABLE_ROV     = 0;
 -- This generally results in a more accurate presentation of your selected expansions
 -- as well as a less confusing player experience for things that are disabled (things that are disabled are not loaded)
 -- This feature correlates to the required_expansion column in the SQL files
-RESTRICT_BY_EXPANSION = 1;
+RESTRICT_BY_EXPANSION = 0;
 
 -- CHARACTER CONFIG
 INITIAL_LEVEL_CAP = 50; -- The initial level cap for new players.  There seems to be a hardcap of 255.
-MAX_LEVEL = 99; -- Level max of the server, lowers the attainable cap by disabling Limit Break quests.
+MAX_LEVEL = 75; -- Level max of the server, lowers the attainable cap by disabling Limit Break quests.
 NORMAL_MOB_MAX_LEVEL_RANGE_MIN = 81; -- Lower Bound of Max Level Range for Normal Mobs (0 = Uncapped)
 NORMAL_MOB_MAX_LEVEL_RANGE_MAX = 84; -- Upper Bound of Max Level Range for Normal Mobs (0 = Uncapped)
 START_GIL = 10; --Amount of gil given to newly created characters.
