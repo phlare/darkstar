@@ -25,9 +25,9 @@ function onInitialize(zone)
 
     local whichNM = math.random(0,19);
     if (whichNM < 10) then
-        SetRespawnTime(Argus, 900, 43200); -- 0-12 hours 
+        SetRespawnTime(Argus, 300, 600); -- 5-10 min
     else
-        SetRespawnTime(Leech_King, 900, 43200); -- 0-12 hours
+        SetRespawnTime(Leech_King, 300, 600); -- 5-10 min
     end
 end;
 
