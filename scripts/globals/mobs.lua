@@ -24,6 +24,10 @@ function onMobDeathEx(mob, player, isKiller, isWeaponSkillKill)
             if (player:getEquipID(SLOT_MAIN) == 16607 and isWeaponSkillKill == false) then
                 if (ChaosbringerKills < 200) then
                     player:setVar("ChaosbringerKills", ChaosbringerKills + 1);
+                    -- report every 10th kill
+                    if ((ChaosbringerKills + 1) % 10 == 0) then
+                        player:PrintToPlayer( string.format( "That was kill #%u!", ChaosbringerKills +1 ));
+                    end
                 end
             end
         end
