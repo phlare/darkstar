@@ -85,3 +85,11 @@ WHERE NOT EXISTS (
 -- also update empress hairpin to be much more likely to drop
 UPDATE mob_droplist
 SET rate = 320 WHERE dropId = 174 AND itemId = 15515;
+
+
+-- Poisonhand_Gnadgad
+-- update jujitsu_gi to 40%
+UPDATE mob_droplist
+SET rate = 700 WHERE dropId = 2806 AND itemId = 13728;
+UPDATE mob_droplist
+SET rate = 300 WHERE dropId = 2806 AND itemId = 12923;
