@@ -93,3 +93,16 @@ UPDATE mob_droplist
 SET rate = 700 WHERE dropId = 2806 AND itemId = 13728;
 UPDATE mob_droplist
 SET rate = 300 WHERE dropId = 2806 AND itemId = 12923;
+
+
+-- Bune (a bit preemptive, i know)
+-- SELECT * FROM mob_spawn_points WHERE mobname = 'Bune';
+-- SELECT * FROM mob_groups WHERE groupId = 10107;
+-- SELECT * FROM mob_droplist WHERE dropId = 434;
+-- SELECT * FROM item_weapon WHERE itemId = 16605;
+UPDATE mob_droplist
+SET rate = 333 WHERE dropId = 434 AND itemId = 16605;
+
+-- Intulo
+UPDATE mob_droplist
+SET rate = 333 WHERE dropId = 1788 AND itemId = 15372;
