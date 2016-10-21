@@ -16,13 +16,13 @@ require("scripts/zones/Oldton_Movalpolos/TextIDs");
 -----------------------------------
 
 function onTrade(player,npc,trade)
-    local mineShaftWarpCost = 2000;
+    local mineShaftWarpCost = 100;
     local tradeGil = trade:getGil();
     
     if (player:hasKeyItem(SHAFT_GATE_OPERATING_DIAL) and tradeGil == mineShaftWarpCost) then
         player:startEvent(0x0038);
     elseif (player:hasKeyItem(SHAFT_GATE_OPERATING_DIAL) == false and tradeGil > 0 and tradeGil <= 10000) then
-        local maxRoll = tradeGil / 200;
+        local maxRoll = math.min(tradeGil / 50, 100);
         local diceRoll = math.random((2),(100));
         player:startEvent(0x0037, tradeGil, maxRoll, diceRoll, mineShaftWarpCost);        
     end
