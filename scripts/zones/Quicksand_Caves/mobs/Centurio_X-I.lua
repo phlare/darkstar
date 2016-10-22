@@ -26,7 +26,7 @@ end;
 -----------------------------------
 function onMobDespawn(mob)
     -- Set Centurio X-I's TOD
-    SetServerVariable("[POP]Centurio_X_I", os.time(t) + 300); -- 5 minutes
+    SetServerVariable("[POP]Centurio_X_I", os.time(t) + 8100); -- 2 hours 15 minutes
     DeterMob(mob:getID(), true);
 
     -- Set PH back to normal, then set to respawn spawn

@@ -34,8 +34,8 @@ function onMobDespawn(mob)
         local Centurio_X_I_ToD = GetServerVariable("[POP]Centurio_X_I");
         -- Check if window is open, and there is not a Centurio_X_I popped already(ACTION_NONE = 0)
         if (Centurio_X_I_ToD <= os.time(t) and GetMobAction(Centurio_X_I) == 0) then
-        	-- Give Antican Signifier 20 percent chance to pop Centurio X_I
-            if (math.random(1,5) == 2) then
+        	-- Give Antican Signifier 1/15 chance to spawn centurio
+            if (math.random(1,10) == 5) then
                 UpdateNMSpawnPoint(Centurio_X_I);
                 GetMobByID(Centurio_X_I):setRespawnTime(GetMobRespawnTime(mobID));
                 SetServerVariable("[PH]Centurio_X_I", mobID);
