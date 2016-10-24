@@ -44,7 +44,7 @@ function onTrigger(player,npc)
         elseif (Z > -5 and Z < 5) then
             if (GetNPCByID(DoorToRancor):getAnimation() == 8) then
                 player:messageSpecial(PAINTBRUSH_OFFSET + 23,PAINTBRUSH_OF_SOULS); -- The <KEY_ITEM> begins to twitch. The canvas is graced with the image from your soul.
-            elseif (player:hasKeyItem(PAINTBRUSH_OF_SOULS) and player:checkDistance(npc) <= 2.5) then -- has paintbrush of souls + close enough
+            elseif (player:hasKeyItem(PAINTBRUSH_OF_SOULS) and X >= -53.2 and Z <= 0.1 and Z >= -0.1) then -- has paintbrush of souls + close enough
                 player:messageSpecial(PAINTBRUSH_OFFSET + 17,PAINTBRUSH_OF_SOULS);
                 player:setVar("started_painting",os.time());
                 player:startEvent(0x003C,PAINTBRUSH_OF_SOULS);
