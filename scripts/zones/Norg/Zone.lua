@@ -38,6 +38,14 @@ function onZoneIn(player,prevZone)
 
     local cs = -1;
 
+    -- an issue in shadow_lord_battle where sometimes ZM doesn't get started 
+    -- (because current mission is 255 and not 0)
+    -- let's check for this issue here and set it if necessary
+    local hasRankSix = player:hasCompletedMission(player:getNation(), 15);
+    if (hasRankSix and player:getCurrentMission(ZILART) == 255) then
+        player:addMission(ZILART,THE_NEW_FRONTIER);
+    end
+    
     if ((player:getXPos() == 0) and (player:getYPos() == 0) and (player:getZPos() == 0)) then
         player:setPos(-19.238,-2.163,-63.964,187);
     end
