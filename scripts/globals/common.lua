@@ -92,3 +92,11 @@ end;
 function vanaDay()
    return (VanadielYear() * 360) + VanadielDayOfTheYear();
 end;
+
+-----------------------------------
+--  vanaHour()
+--  Small function to make it easier to store the current hour
+-----------------------------------
+function vanaHour()
+    return (vanaDay() * 24) + VanadielHour();
+end;
