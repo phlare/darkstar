@@ -19,8 +19,8 @@ end;
 function onMobDespawn(mob)
 
     -- Set LoO's Window Open Time
-    local wait = math.random((75600),(86400));
-    SetServerVariable("[POP]Lord_of_Onzozo", os.time(t) + wait); -- 18-24 hours
+    local wait = math.random((900),(1800));
+    SetServerVariable("[POP]Lord_of_Onzozo", os.time(t) + wait); -- 15-30 min.
     DeterMob(mob:getID(), true);
 
     -- Set PH back to normal, then set to respawn spawn

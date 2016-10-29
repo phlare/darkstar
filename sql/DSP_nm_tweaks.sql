@@ -106,3 +106,16 @@ SET rate = 333 WHERE dropId = 434 AND itemId = 16605;
 -- Intulo
 UPDATE mob_droplist
 SET rate = 333 WHERE dropId = 1788 AND itemId = 15372;
+
+-- LOO
+
+-- add real kraken club back to LOO
+INSERT INTO mob_droplist (dropId, type, itemId, rate)
+SELECT 2079 dropId, 0 type, 17440 itemId, 200 rate
+FROM DUAL
+WHERE NOT EXISTS (
+	SELECT 1
+	FROM mob_droplist
+	WHERE dropId = 2079 AND itemId = 17440
+	LIMIT 1
+);
