@@ -51,6 +51,12 @@ function onTrigger(player,npc)
         player:startEvent(0x0089);
     elseif (player:getVar("trueWillCS") == 1) then
         player:startEvent(0x008a);
+    elseif (player:getMainJob() == 0x0D and player:getMainLvl() > 70 and player:hasLearnedWeaponskill(9) == false)  then
+        player:addLearnedWeaponskill(9);
+        player:PrintToPlayer("learns Blade: Ku!", 8);
+    elseif (player:getMainJob() == 0x0D and player:getMainLvl() > 70 and player:hasLearnedWeaponskill(27) == false)  then
+        player:addLearnedWeaponskill(27);
+        player:PrintToPlayer("learns Blade: Kamu!", 8);
     else
         player:startEvent(0x005e);
     end

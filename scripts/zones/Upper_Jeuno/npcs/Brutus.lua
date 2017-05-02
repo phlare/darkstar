@@ -100,6 +100,15 @@ function onTrigger(player,npc)
         player:startEvent(0x0097);
     elseif (player:getQuestStatus(JEUNO,PATH_OF_THE_BEASTMASTER) == QUEST_COMPLETED) then
         player:startEvent(0x0014);
+    elseif (player:getMainJob() == 0x01 and player:getMainLvl() > 70 and player:hasLearnedWeaponskill(5) == false)  then
+        player:addLearnedWeaponskill(5);
+        player:PrintToPlayer("learns Decimation!", 5);
+    elseif (player:getMainJob() == 0x01 and player:getMainLvl() > 70 and player:hasLearnedWeaponskill(6) == false)  then
+        player:addLearnedWeaponskill(6);
+        player:PrintToPlayer("learns Steel Cyclone!", 8);
+    elseif (player:getMainJob() == 0x01 and player:getMainLvl() > 70 and player:hasLearnedWeaponskill(24) == false)  then
+        player:addLearnedWeaponskill(24);
+        player:PrintToPlayer("learns King's Justice!", 8);
     else
         player:startEvent(0x0042, player:getMainLvl());
     end
