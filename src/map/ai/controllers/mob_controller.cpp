@@ -75,8 +75,7 @@ bool CMobController::TryDeaggro()
         PMob->StatusEffectContainer->GetConfrontationEffect() != PTarget->StatusEffectContainer->GetConfrontationEffect() ||
         PMob->allegiance == PTarget->allegiance ||
         CheckDetection(PTarget) ||
-        CheckHide(PTarget) || 
-        PMob->IsFarFromHome())
+        CheckHide(PTarget))
     {
         if (PTarget) PMob->PEnmityContainer->Clear(PTarget->id);
         PTarget = PMob->PEnmityContainer->GetHighestEnmity();
