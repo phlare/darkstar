@@ -34,7 +34,14 @@ function onTrigger(player,npc)
     BrokenWand = player:hasKeyItem(128);
     
     if (MakingAmends == QUEST_ACCEPTED) then -- MAKING AMENDS: During Quest
-        player:startEvent(0x0114); 
+        player:startEvent(0x0114);
+    elseif (player:getMainJob() == 0x03 and player:getMainLvl() > 70 and player:hasLearnedWeaponskill(11) == false)  then
+        player:addLearnedWeaponskill(11);
+        player:PrintToPlayer("learns Black Halo!", 8);
+    elseif (player:getMainJob() == 0x03 and player:getMainLvl() >= 75 and player:hasLearnedWeaponskill(29) == false)  then
+        player:addLearnedWeaponskill(29);
+        player:PrintToPlayer("learns Mystic Boon!", 8);   
+        --club weaponskills
     elseif (MakingAmends == QUEST_COMPLETED and MakingAmens ~= QUEST_COMPLETED and WonderWands ~= QUEST_COMPLETED and needToZone) then -- MAKING AMENDS: After Quest  
         player:startEvent(0x0117); 
     elseif (MakingAmends == QUEST_COMPLETED and MakingAmens == QUEST_AVAILABLE) then 
@@ -67,7 +74,7 @@ function onTrigger(player,npc)
         end
 
         -- The Parameters are Item IDs for the Recipe        
-        player:startEvent(0x035a, item, 1134, 2778, 2778, 4099, 2778);        
+        player:startEvent(0x035a, item, 1134, 2778, 2778, 4099, 2778);
     else
         rand = math.random(1,2);
         if (rand == 1) then
